@@ -16,15 +16,17 @@ export default class List extends Component{
   render(){
     return (
       <ScrollView style={styles.flex}>
-        <Text style={styles.list_item} onPress={this.goTo.bind(this)}>☆ 豪华邮轮济州岛3日游</Text>
-        <Text style={styles.list_item} onPress={this.goTo.bind(this)}>☆ 豪华邮轮台湾3日游</Text>
-        <Text style={styles.list_item} onPress={this.goTo.bind(this)}>☆ 豪华邮轮地中海8日游</Text>
+        <Text style={styles.list_item} onPress={this.goTo.bind(this, '豪华邮轮济州岛3日游')}>☆ 豪华邮轮济州岛3日游</Text>
+        <Text style={styles.list_item} onPress={this.goTo.bind(this, '豪华邮轮台湾3日游')}>☆ 豪华邮轮台湾3日游</Text>
+        <Text style={styles.list_item} onPress={this.goTo.bind(this, '豪华邮轮地中海8日游')}>☆ 豪华邮轮地中海8日游</Text>
       </ScrollView>
     );
   }
-  goTo(){
+  goTo(info){
     const { navigate } = this.props.navigation;
-    navigate('Detail')
+    navigate('Detail', {
+      info
+    })
   }
 };
 
