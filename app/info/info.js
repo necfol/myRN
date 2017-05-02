@@ -11,6 +11,7 @@ import {
 export default class Detail extends Component{
   constructor(props) {
     super(props)
+    console.log(this)
   };
   static navigationOptions = ({navigation}) => {
     const {state, setParams} = navigation;
